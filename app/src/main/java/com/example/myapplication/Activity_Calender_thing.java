@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -49,47 +48,49 @@ public class Activity_Calender_thing extends AppCompatActivity {
         binding.spinnerCompanions.setAdapter(companionsAdapter);
 
         // 保存事件按鈕點擊事件
-        binding.button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 獲取選擇的日期
-                String selectedStartDate = binding.datePickerStartDate.getDayOfMonth() + "/" +
-                        (binding.datePickerStartDate.getMonth() + 1) + "/" +
-                        binding.datePickerStartDate.getYear();
-                String selectedEndDate = binding.datePickerEndDate.getDayOfMonth() + "/" +
-                        (binding.datePickerEndDate.getMonth() + 1) + "/" +
-                        binding.datePickerEndDate.getYear();
+        binding.button3.setOnClickListener(view -> {
+            // 獲取選擇的日期
+            @SuppressLint("DefaultLocale") String selectedStartDate = String.format("%04d/%02d/%02d",
+                    binding.datePickerStartDate.getYear(),
+                    binding.datePickerStartDate.getMonth() + 1,
+                    binding.datePickerStartDate.getDayOfMonth());
+            @SuppressLint("DefaultLocale") String selectedEndDate = String.format("%04d/%02d/%02d",
+                    binding.datePickerEndDate.getYear(),
+                    binding.datePickerEndDate.getMonth() + 1,
+                    binding.datePickerEndDate.getDayOfMonth());
 
-                // 獲取選擇的時間
-                String selectedStartTime = binding.timePickerStartTime.getHour() + ":" +
-                        binding.timePickerStartTime.getMinute();
-                String selectedEndTime = binding.timePickerEndTime.getHour() + ":" +
-                        binding.timePickerEndTime.getMinute();
+            // 獲取選擇的時間
+            @SuppressLint("DefaultLocale") String selectedStartTime = String.format("%02d:%02d",
+                    binding.timePickerStartTime.getHour(),
+                    binding.timePickerStartTime.getMinute());
+            @SuppressLint("DefaultLocale") String selectedEndTime = String.format("%02d:%02d",
+                    binding.timePickerEndTime.getHour(),
+                    binding.timePickerEndTime.getMinute());
 
-                // 獲取事件對象輸入
-                String companions = binding.spinnerCompanions.getSelectedItem().toString();
+            // 獲取事件對象輸入
+            String companions = binding.spinnerCompanions.getSelectedItem().toString();
 
-                // 獲取事件說明輸入
-                String eventDescription = binding.editTextEventDescription.getText().toString();
+            // 獲取事件說明輸入
+            String eventDescription = binding.editTextEventDescription.getText().toString();
 
-                // 保存事件到 SharedPreferences
-                saveEvent(selectedStartDate, selectedEndDate, selectedStartTime, selectedEndTime, companions, eventDescription);
+            // 保存事件到 SharedPreferences
+            saveEvent(selectedStartDate, selectedEndDate, selectedStartTime, selectedEndTime, companions, eventDescription);
 
-                // 顯示 Toast 提示
-                String toastMessage = "事件已保存：" +
-                        "\n起始日期：" + selectedStartDate +
-                        "\n結束日期：" + selectedEndDate +
-                        "\n起始時間：" + selectedStartTime +
-                        "\n結束時間：" + selectedEndTime +
-                        "\n事件對象：" + companions +
-                        "\n事件說明：" + eventDescription;
+            // 顯示 Toast 提示
+            String toastMessage =
+                    "事件已保存：" +
+                            "\n起始日期：" + selectedStartDate +
+                            "\n結束日期：" + selectedEndDate +
+                            "\n起始時間：" + selectedStartTime +
+                            "\n結束時間：" + selectedEndTime +
+                            "\n事件對象：" + companions +
+                            "\n事件說明：" + eventDescription;
 
-                Toast.makeText(Activity_Calender_thing.this, toastMessage, Toast.LENGTH_LONG).show();
-                // 返回到Activity_Calender页面
-                Intent intent = new Intent(Activity_Calender_thing.this, Activity_Calender.class);
-                startActivity(intent);
-                finish(); // 結束当前Activity
-            }
+            Toast.makeText(Activity_Calender_thing.this, toastMessage, Toast.LENGTH_LONG).show();
+            // 返回到Activity_Calender页面
+            Intent intent = new Intent(Activity_Calender_thing.this, Activity_Calender.class);
+            startActivity(intent);
+            finish(); // 結束当前Activity
         });
     }
 
@@ -110,7 +111,7 @@ public class Activity_Calender_thing extends AppCompatActivity {
         // 構建事件字串
         String eventString = startDate + ";" + endDate + ";" + startTime + ";" + endTime + ";" + companions + ";" + description;
         // 從 SharedPreferences 中獲取已有事件列表
-        Set<String> eventsSet = sharedPreferences.getStringSet("events", new HashSet<String>());
+        Set<String> eventsSet = sharedPreferences.getStringSet("events", new HashSet<>());
         // 將新事件添加到列表中
         eventsSet.add(eventString);
         // 保存更新後的事件列表到 SharedPreferences

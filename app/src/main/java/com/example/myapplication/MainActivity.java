@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     // 用函式:init去初始化button的位置(利用binding取代findViewById)
     private void init() {
         // 使用 binding 對象直接初始化按鈕
-        radioButton = binding.radioButton;
+        radioButton = binding.radioButton1;
         radioButton2 = binding.radioButton2;
         radioButton3 = binding.radioButton3;
         radioButton4 = binding.radioButton4;
