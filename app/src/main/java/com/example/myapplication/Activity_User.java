@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -26,44 +25,32 @@ public class Activity_User extends AppCompatActivity {
         Button settingsButton = binding.settingsButton;
 
         // 設置按鈕點擊事件
-        profileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showToast("點擊了個人檔案按鈕");
-                // 在這裡添加處理個人檔案按鈕點擊的邏輯
-                Intent main = new Intent(Activity_User.this, Activity_user_data.class);
-                startActivity(main);
-            }
+        profileButton.setOnClickListener(view -> {
+            showToast("點擊了個人檔案按鈕");
+            // 在這裡添加處理個人檔案按鈕點擊的邏輯
+            Intent main = new Intent(Activity_User.this, Activity_user_data.class);
+            startActivity(main);
         });
 
-        favoritesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showToast("點擊了最愛收藏按鈕");
-                // 在這裡添加處理最愛收藏按鈕點擊的邏輯
-                Intent main = new Intent(Activity_User.this, Activity_user_like.class);
-                startActivity(main);
-            }
+        favoritesButton.setOnClickListener(view -> {
+            showToast("點擊了最愛收藏按鈕");
+            // 在這裡添加處理最愛收藏按鈕點擊的邏輯
+            Intent main = new Intent(Activity_User.this, Activity_user_like.class);
+            startActivity(main);
         });
 
-        activityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showToast("點擊了活動紀錄按鈕");
-                // 在這裡添加處理活動紀錄按鈕點擊的邏輯
-                Intent main = new Intent(Activity_User.this, Activity_user_memory.class);
-                startActivity(main);
-            }
+        activityButton.setOnClickListener(view -> {
+            showToast("點擊了活動紀錄按鈕");
+            // 在這裡添加處理活動紀錄按鈕點擊的邏輯
+            Intent main = new Intent(Activity_User.this, Activity_user_memory.class);
+            startActivity(main);
         });
 
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showToast("點擊了系統設定按鈕");
-                // 在這裡添加處理系統設定按鈕點擊的邏輯
-                Intent main = new Intent(Activity_User.this, Activity_user_set.class);
-                startActivity(main);
-            }
+        settingsButton.setOnClickListener(view -> {
+            showToast("點擊了系統設定按鈕");
+            // 在這裡添加處理系統設定按鈕點擊的邏輯
+            Intent main = new Intent(Activity_User.this, Activity_user_set.class);
+            startActivity(main);
         });
     }
 

@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,13 +35,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        binding.appBarMain.fab.setOnClickListener(view ->
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+                .setAction("Action", null).show());
 
         init();  // 初始化按鈕
         buttonSetting();  // 設置按鈕點擊事件
@@ -75,52 +70,34 @@ public class MainActivity extends AppCompatActivity {
 
     private void buttonSetting() {
         // 使用binding對象直接設置按鈕點擊事件
-        radioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main = new Intent(MainActivity.this, Activity_login.class);
-                startActivity(main);
-            }
+        radioButton.setOnClickListener(view -> {
+            Intent main = new Intent(MainActivity.this, Activity_login.class);
+            startActivity(main);
         });
 
-        radioButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main = new Intent(MainActivity.this, Activity_Medicine_box.class);
-                startActivity(main);
-            }
+        radioButton2.setOnClickListener(view -> {
+            Intent main = new Intent(MainActivity.this, Activity_Medicine_box.class);
+            startActivity(main);
         });
 
-        radioButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main = new Intent(MainActivity.this, Activity_Medicine.class);
-                startActivity(main);
-            }
+        radioButton3.setOnClickListener(view -> {
+            Intent main = new Intent(MainActivity.this, Activity_Medicine.class);
+            startActivity(main);
         });
 
-        radioButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main = new Intent(MainActivity.this, Activity_Memory.class);
-                startActivity(main);
-            }
+        radioButton4.setOnClickListener(view -> {
+            Intent main = new Intent(MainActivity.this, Activity_Memory.class);
+            startActivity(main);
         });
 
-        radioButton5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main = new Intent(MainActivity.this, Activity_Calender.class);
-                startActivity(main);
-            }
+        radioButton5.setOnClickListener(view -> {
+            Intent main = new Intent(MainActivity.this, Activity_Calender.class);
+            startActivity(main);
         });
 
-        radioButton6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main = new Intent(MainActivity.this, Activity_User.class);
-                startActivity(main);
-            }
+        radioButton6.setOnClickListener(view -> {
+            Intent main = new Intent(MainActivity.this,Activity_User.class);
+            startActivity(main);
         });
 
     }
