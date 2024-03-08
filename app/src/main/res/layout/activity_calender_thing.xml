@@ -177,6 +177,15 @@
                 android:layout_height="wrap_content"
                 android:text="保存事件"
                 tools:ignore="HardcodedText" />
+            <!--suppress AndroidMissingOnClickHandler -->
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="編輯事件"
+                android:onClick="editEvent"
+                tools:ignore="HardcodedText" />
+
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

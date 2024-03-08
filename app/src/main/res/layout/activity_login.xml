@@ -110,19 +110,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <!-- 指紋辨識按鈕 -->
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="190dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:text="指紋辨識"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:background="@drawable/color_3"
-                app:backgroundTint="@null"
-                tools:ignore="ButtonStyle,HardcodedText" />
-
             <!-- Google帳戶連動按鈕 -->
             <Button
                 android:id="@+id/button14"

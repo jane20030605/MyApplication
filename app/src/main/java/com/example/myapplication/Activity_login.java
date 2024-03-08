@@ -60,11 +60,6 @@ public class Activity_login extends AppCompatActivity {
             startActivity(main);
         });
 
-        Button13.setOnClickListener(view -> {
-            // 指紋辨識按鈕點擊事件
-            // 在這裡實現指紋辨識邏輯
-            Toast.makeText(Activity_login.this, "指紋辨識", Toast.LENGTH_SHORT).show();
-        });
         Button14.setOnClickListener(view -> {
             // Google 帳戶聯動按鈕點擊事件
             // 在這裡實現 Google 帳戶聯動邏輯
