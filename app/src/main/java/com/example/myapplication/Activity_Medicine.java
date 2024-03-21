@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Activity_Medicine extends AppCompatActivity {
 
     private EditText editText_licenseNumber;
+    private View editText_chineseName;
+    private View editText_englishName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +24,13 @@ public class Activity_Medicine extends AppCompatActivity {
         TextView textView5 = findViewById(R.id.textView5);
         Spinner spinner_licenseNumber = findViewById(R.id.spinner_licenseNumber);
         editText_licenseNumber = findViewById(R.id.editText_licenseNumber);
-        EditText editText_chineseName = findViewById(R.id.editText_chineseName);
-        EditText editText_englishName = findViewById(R.id.editText_englishName);
+        editText_chineseName = findViewById(R.id.editText_chineseName);
+        editText_englishName = findViewById(R.id.editText_englishName);
         Spinner spinner_shape = findViewById(R.id.spinner_shape);
         Spinner spinner_notch = findViewById(R.id.spinner_notch);
         Spinner spinner_color = findViewById(R.id.spinner_color);
         Spinner spinner_symbol = findViewById(R.id.spinner_symbol);
+
         Spinner spinner_markings = findViewById(R.id.spinner_markings);
 
         // 設置許可證下拉式選單的項目
