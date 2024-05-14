@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    alias(libs.plugins.androidApplication)
 }
 
 android {
@@ -14,6 +14,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
@@ -22,6 +23,9 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
+    useLibrary("org.apache.http.legacy")
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -32,24 +36,28 @@ android {
     buildFeatures {
         dataBinding = true
     }
-    buildToolsVersion = "34.0.0"
-    ndkVersion = "26.1.10909125"
-
 }
 
 dependencies {
 
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.navigation:navigation-fragment:2.7.7")
-    implementation("androidx.navigation:navigation-ui:2.7.7")
-    //implementation("com.applandeo:material-calendar-view:1.7.0")
-    //noinspection GradleDependency,GradleCompatible,GradleCompatible
-    implementation("androidx.databinding:databinding-runtime:8.2.2")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    //noinspection UseTomlInstead
+    implementation("com.google.android.material:material:1.12.0")
+    //noinspection UseTomlInstead
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+    implementation(libs.activation)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.mediarouter)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.activity)
+    implementation(libs.transport.api)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }

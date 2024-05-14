@@ -2,24 +2,154 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/action_settings"
     app:startDestination="@+id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:name="com.example.myapplication.ui.Home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_medicine_box"
+            app:destination="@id/nav_medicine_box" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_medicine"
+            app:destination="@id/nav_medicine" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_memory"
+            app:destination="@id/nav_memory" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_calender"
+            app:destination="@id/nav_calender" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_user"
+            app:destination="@id/nav_user" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.myapplication.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_medicine_box"
+        android:name="com.example.myapplication.ui.Medicine_box.Medicine_boxFragment"
+        android:label="@string/menu_medicine_box"
+        tools:layout="@layout/fragment_medicine_box" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_medicine"
+        android:name="com.example.myapplication.ui.Medicine.MedicineFragment"
+        android:label="@string/menu_medicine"
+        tools:layout="@layout/fragment_medicine" >
+        <action
+            android:id="@+id/nav_medicine_allbox"
+            app:destination="@id/nav_medicine_allbox" />
+	    <action
+		    android:id="@+id/action_nav_medicine_to_medicine_inquire2"
+		    app:destination="@id/nav_medicine_inquire" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.example.myapplication.ui.Login.LoginFragment"
+        android:label="@string/menu_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_nav_registration"
+            app:destination="@id/nav_registration" />
+	    <action
+		    android:id="@+id/action_nav_login_to_forget_password"
+		    app:destination="@id/nav_forget_password" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_memory"
+        android:name="com.example.myapplication.ui.Memory.MemoryFragment"
+        android:label="@string/menu_memory"
+        tools:layout="@layout/fragment_memory" />
+    <fragment
+        android:id="@+id/nav_calender"
+        android:name="com.example.myapplication.ui.Calender.CalenderFragment"
+        android:label="@string/menu_calender"
+        tools:layout="@layout/fragment_calender">
+        <action
+            android:id="@+id/action_nav_calender_to_nav_calender_thing"
+            app:destination="@id/nav_calender_thing" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_user"
+        android:name="com.example.myapplication.ui.User.UserFragment"
+        android:label="@string/menu_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_nav_user_to_nav_user_data"
+            app:destination="@id/nav_user_data" />
+        <action
+            android:id="@+id/action_nav_user_to_nav_user_set"
+            app:destination="@id/nav_user_set" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.myapplication.MainActivity"
+        android:label="app_bar_main"
+        tools:layout="@layout/app_bar_main" />
+    <fragment
+        android:id="@+id/nav_registration"
+        android:name="com.example.myapplication.ui.registration.RegistrationFragment"
+        android:label="@string/menu_registration"
+        tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/nav_calender_thing"
+        android:name="com.example.myapplication.ui.calender_thing.CalenderThingFragment"
+        android:label="@string/menu_calender_thing"
+        tools:layout="@layout/fragment_calender_thing" />
+    <fragment
+        android:id="@+id/nav_user_data"
+        android:name="com.example.myapplication.ui.user_data.user_dataFragment"
+        android:label="@string/menu_user_data"
+        tools:layout="@layout/fragment_user_data" >
+        <action
+            android:id="@+id/action_nav_user_data_to_emergency_contact"
+            app:destination="@id/nav_emergency_contact" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_user_set"
+        android:name="com.example.myapplication.ui.user_set.user_setFragment"
+        android:label="@string/menu_user_set"
+        tools:layout="@layout/fragment_user_set" >
+        <action
+            android:id="@+id/action_nav_user_set_to_feedback"
+            app:destination="@id/nav_feedback" />
+        <action
+            android:id="@+id/action_nav_user_set_to_guidedTour"
+            app:destination="@id/nav_guidedTour" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_medicine_allbox"
+        android:name="com.example.myapplication.ui.medicine_allbox.medicine_allboxFragment"
+        android:label="@string/menu_medicine_allbox"
+        tools:layout="@layout/fragment_medicine_allbox" />
+	<fragment
+		android:id="@+id/nav_guidedTour"
+		android:name="com.example.myapplication.ui.guidedtour.GuidedTour"
+		android:label="@string/menu_guided_tour"
+		tools:layout="@layout/fragment_guided_tour" />
+	<fragment
+		android:id="@+id/nav_feedback"
+		android:name="com.example.myapplication.ui.feedback.feedback"
+		android:label="@string/menu_feedback"
+		tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/nav_emergency_contact"
+        android:name="com.example.myapplication.ui.emergency.emergency_contact"
+        android:label="@string/menu_emergency_contact"
+        tools:layout="@layout/fragment_emergency_contact" />
+	<fragment
+		android:id="@+id/nav_medicine_inquire"
+		android:name="com.example.myapplication.ui.Medicine_inquire.medicine_inquire"
+		android:label="fragment_medicine_inquire"
+		tools:layout="@layout/fragment_medicine_inquire" />
+	<fragment
+		android:id="@+id/nav_forget_password"
+		android:name="com.example.myapplication.ui.forget_password.forget_passwordFragment"
+		android:label="fragment_forget_password"
+		tools:layout="@layout/fragment_forget_password" />
 </navigation>

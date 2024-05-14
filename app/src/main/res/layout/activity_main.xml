@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
     tools:openDrawer="start">
 
     <include
@@ -18,127 +16,10 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:fillColor="#FFFFFF"
-            android:scrollbarThumbHorizontal="@drawable/ic_launcher_background"
-            android:scrollbarThumbVertical="@android:drawable/list_selector_background"
-            tools:ignore="UnusedAttribute">
-
-            <Button
-                android:id="@+id/radioButton1"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="180dp"
-                android:background="#0003B0F4"
-                android:text="登入系統"
-                android:textSize="20sp"
-                android:textColor="#E8D959"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText,RtlCompat" />
-
-            <Button
-                android:id="@+id/radioButton2"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="19dp"
-                android:background="#0003B0F4"
-                android:text="個人藥物資料庫"
-                android:textSize="20sp"
-                android:textColor="#E8D959"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton1"
-                tools:ignore="HardcodedText,RtlCompat" />
-
-            <Button
-                android:id="@+id/radioButton3"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="19dp"
-                android:background="#0003B0F4"
-                android:text="藥物資料查詢"
-                android:textSize="20sp"
-                android:textColor="#E8D959"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton2"
-                tools:ignore="HardcodedText,RtlCompat" />
-
-            <Button
-                android:id="@+id/radioButton4"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="19dp"
-                android:background="#0003B0F4"
-                android:text="跌倒紀錄查詢"
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:textColor="#E8D959"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton3"
-                tools:ignore="HardcodedText,RtlCompat" />
-
-            <Button
-                android:id="@+id/radioButton5"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="19dp"
-                android:background="#0003B0F4"
-                android:text="行事曆紀錄"
-                android:textSize="20sp"
-                android:textColor="#E8D959"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton4"
-                tools:ignore="HardcodedText,RtlCompat" />
-
-            <Button
-                android:id="@+id/radioButton6"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="19dp"
-                android:background="#0003B0F4"
-                android:text="使用者資料"
-                android:textSize="20sp"
-                android:textColor="#E8D959"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton5"
-                tools:ignore="HardcodedText,RtlCompat" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.navigation.NavigationView>
-
+        app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>
