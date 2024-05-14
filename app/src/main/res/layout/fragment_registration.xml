@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.registration.RegistrationFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.registration.RegistrationFragment"
+        tools:ignore="ScrollViewSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            tools:ignore="ExtraText,RedundantNamespace,UselessParent">
+
+
+            <TextView
+                android:id="@+id/registration_form"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="100dp"
+                android:text="@string/registration_form"
+                android:textSize="45sp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/user_name"
+	            android:inputType="text"
+	            android:imeOptions="actionNext"
+                android:textSize="20sp"
+	            tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,TextFields" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/password"
+	            android:inputType="textPassword"
+	            android:imeOptions="actionNext"
+                android:textSize="20sp"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat" />
+	        <EditText
+		        android:id="@+id/password_check"
+		        android:layout_width="match_parent"
+		        android:layout_height="60dp"
+		        android:layout_marginStart="10dp"
+		        android:layout_marginTop="19dp"
+		        android:hint="@string/password_check"
+		        android:inputType="textPassword"
+		        android:imeOptions="actionNext"
+		        android:textSize="20sp"
+		        tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat" />
+            <EditText
+                android:id="@+id/real_name"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/real_name"
+	            android:inputType="text"
+	            android:imeOptions="actionNext"
+                android:textSize="20sp"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,TextFields" />
+
+	        <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/phone"
+		        android:inputType="date"
+	            android:imeOptions="actionNext"
+                android:textSize="20sp"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,TextFields" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/mail"
+	            android:inputType="textEmailAddress"
+	            android:imeOptions="actionNext"
+                android:textSize="20sp"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat" />
+            <EditText
+                android:id="@+id/home"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/address"
+	            android:inputType="text"
+	            android:imeOptions="actionDone"
+                android:textSize="20sp"
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat,TextFields" />
+
+	        <TextView
+		        android:id="@+id/birthday"
+		        android:layout_width="match_parent"
+		        android:layout_height="60dp"
+		        android:layout_marginStart="10dp"
+		        android:layout_marginTop="19dp"
+		        android:hint="@string/birthday_vid"
+		        android:gravity="center_vertical"
+		        android:textSize="20sp"
+		        tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat"
+		        android:clickable="true"
+		        android:focusable="false" />
+
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+	            android:background="@drawable/color"
+                android:layout_marginTop="20dp"
+                android:text="@string/registration"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,TextViewEdits" />
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>
